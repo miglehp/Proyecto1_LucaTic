@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="sudoku.css">
+    <link rel="stylesheet" href="../css/style-general.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar">
+                        <img src="https://img.icons8.com/external-photo3ideastudio-gradient-photo3ideastudio/64/000000/external-pig-food-delivery-photo3ideastudio-gradient-photo3ideastudio.png" alt="LechonGames icono 2021" title="logo" />
+                        <h1>
+                            LechonGames
+                        </h1>
+                        <ul class="d-none d-md-flex">
+                            <li class="nav-link"><a href="../ES/index.html">Home</a></li>
+                            <li class="nav-link"><a href="../ES/proyectos.html">Proyectos</a></li>
+                            <li class="nav-link"><a href="../ES/noticias.html">Noticias</a></li>
+                            <li class="nav-link"><a href="../ES/equipo.html">Equipo</a></li>
+                            <li class="nav-link"><a href="../ES/contacto.html">Contacto</a></li>
+                            <li class="nav-link"><a href="../ES/minijuegos.html">Minijuegos</a></li>
+                        </ul>
+                        <div class="idioma">
+                            <a href="../EN/news.html">ES/EN</a>
+                            <img src="../img/espana.png" alt="Bandera de España">
+                        </div>
+                        <div class="d-md-none d-flex flex-column">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                        height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                                    </svg></span>
+                            </button>
+                            <div class="collapse" id="navbarToggleExternalContent">
+                                <div class="bg-custom p-4">
+                                    <ul class="d-flex flex-column">
+                                        <li class="nav-link"><a href="../ES/index.html">Home</a></li>
+                                        <li class="nav-link"><a href="../ES/proyectos.html">Proyectos</a></li>
+                                        <li class="nav-link"><a href="../ES/noticias.html">Noticias</a></li>
+                                        <li class="nav-link"><a href="../ES/equipo.html">Equipo</a></li>
+                                        <li class="nav-link"><a href="../ES/contacto.html">Contacto</a></li>
+                                        <li class="nav-link"><a href="../ES/minijuegos.html">Minijuegos</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--MAIN-->
+
+    <main>
+        <div class="container pantalla">
+            <!-- Menu de iniciar el Sudoku -->
+            <div class="pantalla">
+                <div class="pant-inicial">
+                    <h2>Sudoku</h2>
+                    <input type="text" placeholder="Tu nombre" class="nombre">
+                    <select name="dificultad" id="dificultad">
+                        <option value="1">Fácil</option>
+                        <option value="2">Medio</option>
+                        <option value="3">Díficil</option>
+                    </select>
+                    <button class="btn" id="btn-new">Nuevo Juego</button>
+                </div>
+            </div>
+            <!-- Cuadricula del Sudoku -->
+            <div class="pant-sudoku trans">
+                <div class="row score-crono">
+                    <div id="cronometro" class="crono">Cronómetro</div>
+                </div>
+                <div class="row">
+                    <div class="col"><input type="number" id="a1"></div>
+                    <div class="col"><input type="number" id="a2"></div>
+                    <div class="col border_right"><input type="number" id="a3"></div>
+                    <div class="col"><input type="number" id="a4"></div>
+                    <div class="col"><input type="number" id="a5"></div>
+                    <div class="col border_right"><input type="number" id="a6"></div>
+                    <div class="col"><input type="number" id="a7"></div>
+                    <div class="col"><input type="number" id="a8"></div>
+                    <div class="col"><input type="number" id="a9"></div>
+
+                </div>
+                <div class="row">
+                    <div class="col"><input type="number" id="b1"></div>
+                    <div class="col"><input type="number" id="b2"></div>
+                    <div class="col border_right"><input type="number" id="b3"></div>
+                    <div class="col"><input type="number" id="b4"></div>
+                    <div class="col"><input type="number" id="b5"></div>
+                    <div class="col border_right"><input type="number" id="b6"></div>
+                    <div class="col"><input type="number" id="b7"></div>
+                    <div class="col"><input type="number" id="b8"></div>
+                    <div class="col"><input type="number" id="b9"></div>
+                </div>
+                <div class="row border_bottom">
+                    <div class="col"><input type="number" id="c1"></div>
+                    <div class="col"><input type="number" id="c2"></div>
+                    <div class="col border_right"><input type="number" id="c3"></div>
+                    <div class="col"><input type="number" id="c4"></div>
+                    <div class="col"><input type="number" id="c5"></div>
+                    <div class="col border_right"><input type="number" id="c6"></div>
+                    <div class="col"><input type="number" id="c7"></div>
+                    <div class="col"><input type="number" id="c8"></div>
+                    <div class="col"><input type="number" id="c9"></div>
+                </div>
+                <div class="row">
+                    <div class="col"><input type="number" id="d1"></div>
+                    <div class="col"><input type="number" id="d2"></div>
+                    <div class="col border_right"><input type="number" id="d3"></div>
+                    <div class="col"><input type="number" id="d4"></div>
+                    <div class="col"><input type="number" id="d5"></div>
+                    <div class="col border_right"><input type="number" id="d6"></div>
+                    <div class="col"><input type="number" id="d7"></div>
+                    <div class="col"><input type="number" id="d8"></div>
+                    <div class="col"><input type="number" id="d9"></div>
+                </div>
+                <div class="row">
+                    <div class="col"><input type="number" id="e1"></div>
+                    <div class="col"><input type="number" id="e2"></div>
+                    <div class="col border_right"><input type="number" id="e3"></div>
+                    <div class="col"><input type="number" id="e4"></div>
+                    <div class="col"><input type="number" id="e5"></div>
+                    <div class="col border_right"><input type="number" id="e6"></div>
+                    <div class="col"><input type="number" id="e7"></div>
+                    <div class="col"><input type="number" id="e8"></div>
+                    <div class="col"><input type="number" id="e9"></div>
+                </div>
+                <div class="row border_bottom">
+                    <div class="col"><input type="number" id="f1"></div>
+                    <div class="col"><input type="number" id="f2"></div>
+                    <div class="col border_right"><input type="number" id="f3"></div>
+                    <div class="col"><input type="number" id="f4"></div>
+                    <div class="col"><input type="number" id="f5"></div>
+                    <div class="col border_right"><input type="number" id="f6"></div>
+                    <div class="col"><input type="number" id="f7"></div>
+                    <div class="col"><input type="number" id="f8"></div>
+                    <div class="col"><input type="number" id="f9"></div>
+                </div>
+                <div class="row">
+                    <div class="col"><input type="number" id="g1"></div>
+                    <div class="col"><input type="number" id="g2"></div>
+                    <div class="col border_right"><input type="number" id="g3"></div>
+                    <div class="col"><input type="number" id="g4"></div>
+                    <div class="col"><input type="number" id="g5"></div>
+                    <div class="col border_right"><input type="number" id="g6"></div>
+                    <div class="col"><input type="number" id="g7"></div>
+                    <div class="col"><input type="number" id="g8"></div>
+                    <div class="col"><input type="number" id="g9"></div>
+                </div>
+                <div class="row">
+                    <div class="col"><input type="number" id="h1"></div>
+                    <div class="col"><input type="number" id="h2"></div>
+                    <div class="col border_right"><input type="number" id="h3"></div>
+                    <div class="col"><input type="number" id="h4"></div>
+                    <div class="col"><input type="number" id="h5"></div>
+                    <div class="col border_right"><input type="number" id="h6"></div>
+                    <div class="col"><input type="number" id="h7"></div>
+                    <div class="col"><input type="number" id="h8"></div>
+                    <div class="col"><input type="number" id="h9"></div>
+                </div>
+                <div class="row">
+                    <div class="col"><input type="number" id="i1"></div>
+                    <div class="col"><input type="number" id="i2"></div>
+                    <div class="col border_right"><input type="number" id="i3"></div>
+                    <div class="col"><input type="number" id="i4"></div>
+                    <div class="col"><input type="number" id="i5"></div>
+                    <div class="col border_right"><input type="number" id="i6"></div>
+                    <div class="col"><input type="number" id="i7"></div>
+                    <div class="col"><input type="number" id="i8"></div>
+                    <div class="col"><input type="number" id="i9"></div>
+                </div>
+            </div>
+            <!-- Pantalla de Score -->
+            <div class="pant-score trans">
+                <div class="row">
+                    <div class="row">
+                        <h2>Puntuaciones Altas</h2>
+                        <div class="column">
+                            <table id="highScores">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Puntuacion</th>
+                                </tr>
+                            </table>
+                            <button class="btn" id="btn-volver">volver al menú principal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- pantalla de victoria -->
+            <div class="pant-victoria trans">
+                <div class="carta">
+                    <div class="row">
+                        <h2>Felicitaciones</h2>
+                        <h4>su puntuación es:</h4>
+                    </div>
+                    <div class="row score">
+                        Score
+                    </div>
+                    <br>
+                    <div class="row"><button id="verHighscore">VER PUNTUACIONES</button></div>
+                </div>
+            </div>
+    </main>
+
+
+    <footer>
+        <!-- clase para que el footer ocupe toda la pantalla -->
+        <div class="row">
+            <div class="col-12 flexFooter">
+                <div class="copyFooter">
+                    <p>&copy; LechonGames 2021</p>
+                </div>
+                <div class="redesFooter">
+                    <ul>
+                        <li>
+                            <a href="https://www.tomorrowtides.com/lechon-games-blog.html" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="4vh" length="auto" viewBox="0 0 172 172" style=" fill:#000000;" class="twitter">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-size="none"
+                                        style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#ffffff">
+                                            <path
+                                                d="M160.53333,39.77213c-5.4868,2.43667 -11.38067,4.0764 -17.56693,4.816c6.31813,-3.784 11.1628,-9.77533 13.44467,-16.91907c-5.90533,3.50307 -12.4528,6.04867 -19.42453,7.42467c-5.57853,-5.94547 -13.52493,-9.66067 -22.31987,-9.66067c-16.8904,0 -30.5816,13.69693 -30.5816,30.5816c0,2.39653 0.2752,4.73573 0.7912,6.966c-25.41587,-1.2728 -47.94787,-13.4504 -63.038,-31.9576c-2.62587,4.51787 -4.13373,9.7696 -4.13373,15.38253c0,10.60667 5.39507,19.9692 13.59947,25.45027c-5.01093,-0.16053 -9.72947,-1.53653 -13.85173,-3.82413c0,0.13187 0,0.25227 0,0.38413c0,14.82067 10.53787,27.18173 24.53293,29.98533c-2.5628,0.69947 -5.26893,1.07213 -8.06107,1.07213c-1.96653,0 -3.8872,-0.19493 -5.75053,-0.54467c3.89293,12.14893 15.1876,20.99547 28.5692,21.242c-10.46333,8.2044 -23.65,13.09493 -37.98333,13.09493c-2.46533,0 -4.902,-0.14333 -7.29853,-0.43c13.5364,8.67453 29.60693,13.73707 46.88147,13.73707c56.25547,0 87.00907,-46.60053 87.00907,-87.0148c0,-1.3244 -0.02867,-2.64307 -0.086,-3.956c5.97987,-4.3172 11.16853,-9.7008 15.26787,-15.82973z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.tomorrowtides.com/lechon-games-blog.html" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="4vh" length="auto" viewBox="0 0 172 172" style=" fill:#000000;" class="youtube">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-size="none"
+                                        style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#ffffff">
+                                            <path
+                                                d="M154.45063,49.88c-1.37063,-7.56531 -7.90125,-13.07469 -15.48,-14.79469c-11.34125,-2.40531 -32.33063,-4.12531 -55.04,-4.12531c-22.69594,0 -44.02125,1.72 -55.37594,4.12531c-7.56531,1.72 -14.10937,6.88 -15.48,14.79469c-1.38406,8.6 -2.75469,20.64 -2.75469,36.12c0,15.48 1.37063,27.52 3.09063,36.12c1.38406,7.56531 7.91469,13.07469 15.48,14.79469c12.04,2.40531 32.68,4.12531 55.38937,4.12531c22.70938,0 43.34938,-1.72 55.38938,-4.12531c7.56531,-1.72 14.09594,-6.88 15.48,-14.79469c1.37062,-8.6 3.09062,-20.98937 3.44,-36.12c-0.69875,-15.48 -2.41875,-27.52 -4.13875,-36.12zM65.36,110.08v-48.16l41.96531,24.08z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.tomorrowtides.com/lechon-games-blog.html" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="4vh" length="auto" viewBox="0 0 172 172" style=" fill:#000000;" class="github">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-size="none"
+                                        style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#ffffff">
+                                            <path
+                                                d="M86,17.2c-37.9948,0 -68.8,30.8052 -68.8,68.8c0,32.23853 22.19947,59.21387 52.12747,66.67867c-0.32107,-0.9288 -0.52747,-2.00667 -0.52747,-3.34253v-11.75907c-2.79213,0 -7.47053,0 -8.64587,0c-4.70707,0 -8.8924,-2.02387 -10.922,-5.78493c-2.2532,-4.1796 -2.64307,-10.57227 -8.22733,-14.4824c-1.65693,-1.30147 -0.3956,-2.7864 1.5136,-2.58573c3.526,0.9976 6.45,3.41707 9.202,7.00613c2.74053,3.5948 4.03053,4.40893 9.1504,4.40893c2.48253,0 6.19773,-0.14333 9.69507,-0.69373c1.88053,-4.77587 5.13133,-9.17333 9.10453,-11.2488c-22.9104,-2.3564 -33.84387,-13.75427 -33.84387,-29.22853c0,-6.66213 2.838,-13.1064 7.65973,-18.53587c-1.5824,-5.38933 -3.57187,-16.38013 0.60773,-20.56547c10.30853,0 16.54067,6.68507 18.03707,8.49107c5.13707,-1.76013 10.77867,-2.75773 16.70693,-2.75773c5.93973,0 11.60427,0.9976 16.7528,2.7692c1.4792,-1.79453 7.71707,-8.50253 18.04853,-8.50253c4.1968,4.19107 2.1844,15.22773 0.5848,20.6056c4.79307,5.418 7.61387,11.84507 7.61387,18.49573c0,15.4628 -10.91627,26.85493 -33.79227,29.2228c6.2952,3.2852 10.8876,12.51587 10.8876,19.4704v15.67493c0,0.59627 -0.13187,1.02627 -0.20067,1.53653c26.80907,-9.39693 46.06733,-34.85293 46.06733,-64.87267c0,-37.9948 -30.8052,-68.8 -68.8,-68.8z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.tomorrowtides.com/lechon-games-blog.html" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="4vh" length="auto" viewBox="0 0 172 172" style=" fill:#000000;" class="facebook">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-size="none"
+                                        style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#ffffff">
+                                            <path
+                                                d="M137.6,22.93333h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h57.33333v-51.6h-17.2v-17.2h17.2v-9.2364c0,-17.48667 8.51973,-25.1636 23.05373,-25.1636c6.96027,0 10.64107,0.516 12.384,0.75107v16.44893h-9.91293c-6.16907,0 -8.3248,3.25653 -8.3248,9.84987v7.35013h18.08293l-2.45387,17.2h-15.62907v51.6h28.66667c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-103.2c0,-6.33533 -5.13707,-11.46667 -11.46667,-11.46667z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src='cronometro.js'></script>
+    <script src='sudoku.js'></script>
+    <script src='user-score.js'></script>
+    <script src='casillas.js'></script>
+    <script src='app.js'></script>
+</body>
+
+</html>

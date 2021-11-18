@@ -6,17 +6,19 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="../css/style-general.css" />
-	<link rel="stylesheet" href="../css/proyectos.css">
+	<link rel="stylesheet" href="../pokemon/pokemon.css" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 	<link rel="icon" type="image/svg+xml"
 		href="https://img.icons8.com/external-photo3ideastudio-gradient-photo3ideastudio/64/000000/external-pig-food-delivery-photo3ideastudio-gradient-photo3ideastudio.png">
 	<link type="text/plain" rel="author" href="../human.txt" />
-	<title>LechonGames</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+	<title>Who's That Pokemon</title>
 </head>
 
 <body>
-	<!-- div para todo el body aka container -->
 	<header>
 		<div class="container-fluid">
 			<div class="row">
@@ -24,20 +26,18 @@
 					<nav class="navbar">
 						<img src="https://img.icons8.com/external-photo3ideastudio-gradient-photo3ideastudio/64/000000/external-pig-food-delivery-photo3ideastudio-gradient-photo3ideastudio.png"
 							alt="LechonGames icono 2021" title="logo" />
-						<h1>
-							LechonGames
-						</h1>
+						<h1>LechonGames</h1>
 						<ul class="d-none d-md-flex">
-							<li class="nav-link"><a href="index.html">Home</a></li>
-							<li class="nav-link"><a href="projects.html">Projects</a></li>
-							<li class="nav-link"><a href="news.html">News</a></li>
-							<li class="nav-link"><a href="team.html">Team</a></li>
-							<li class="nav-link"><a href="contact.html">Contact</a></li>
+							<li class="nav-link"><a href="../ES/index.html">Home</a></li>
+							<li class="nav-link"><a href="../ES/proyectos.html">Proyectos</a></li>
+							<li class="nav-link"><a href="../ES/noticias.html">Noticias</a></li>
+							<li class="nav-link"><a href="../ES/equipo.html">Equipo</a></li>
+							<li class="nav-link"><a href="../ES/contacto.html">Contacto</a></li>
 							<li class="nav-link"><a href="../ES/minijuegos.html">Minijuegos</a></li>
 						</ul>
 						<div class="idioma">
-							<a href="../ES/proyectos.html">ES/EN</a>
-							<img src="../img/reino-unido.png" alt="United Kingdom Flag">
+							<a href="../EN/contact.html">ES/EN</a>
+							<img src="../img/espana.png" alt="Bandera de España">
 						</div>
 						<div class="d-md-none d-flex flex-column">
 							<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -53,11 +53,12 @@
 							<div class="collapse" id="navbarToggleExternalContent">
 								<div class="bg-custom p-4">
 									<ul class="d-flex flex-column">
-										<li class="nav-link"><a href="index.html">Home</a></li>
-										<li class="nav-link"><a href="projects.html">Projects</a></li>
-										<li class="nav-link"><a href="news.html">News</a></li>
-										<li class="nav-link"><a href="team.html">Team</a></li>
-										<li class="nav-link"><a href="contact.html">Contact</a></li>
+										<li class="nav-link"><a href="../ES/index.html">Home</a></li>
+										<li class="nav-link"><a href="../ES/proyectos.html">Proyectos</a></li>
+										<li class="nav-link"><a href="../ES/noticias.html">Noticias</a></li>
+										<li class="nav-link"><a href="../ES/equipo.html">Equipo</a></li>
+										<li class="nav-link"><a href="../ES/contacto.html">Contacto</a></li>
+										<li class="nav-link"><a href="../ES/minijuegos.html">Minijuegos</a></li>
 									</ul>
 								</div>
 							</div>
@@ -68,127 +69,68 @@
 		</div>
 	</header>
 	<main>
-		<!-- clase para la fila con 3 columnas en pantalla grande y una en pantalla chiquita -->
 		<div class="row">
-			<h2>Our Projects</h2>
-			<!-- clase de la columna -->
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4">
-				<div class="card">
-					<h3>SEKIRO: SHADOWS DIE TWICE GAME OF THE YEAR EDITION</h3>
-					<a href="projects-detail/projects-detail-Sekiro.html"><img
-							src="../img/proyectos/sekiro-shadow-die-twice-game-of-the-year-edition.jpg"
-							alt="Sekiro"></a>
-					<p>Genre: Action Adventure</p>
+			<div class="col-12 principal">
+				<div id="seleccion">
+					<h2>Who´s That Pokemon</h2>
+					<label for="nombre">Dinos tu nombre:
+						<input type="text" name="nombre" id="nombre">
+					</label>
+					<p>Pulsa el botón para comenzar</p><br>
+					<input type="button" value="¡Comenzar!" id="boton-comenzar">
 				</div>
-			</div>
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4">
-				<div class="card">
-					<h3>METAL WOLF CHAOS XD</h3>
-					<a href="projects-detail/projects-detail-MetalWolf.html"><img
-							src="../img/proyectos/metal-wolf-chaos-xd.jpg" alt="Metal Wolf"></a>
-					<p>Genre: Action</p>
+				<div id="juego" class="hidden">
+					<div class="card" id="carta">
+						<img class="card-img-top oculto" src="#" alt="Card image cap" id="imagen-pokemon">
+						<div class="card-body">
+							<h4 class="card-title" id="titulo-carta">Adivina el Pokémon</h4>
+							<p class="card-text" id="texto-carta">
+							</p>
+							<p class="puntuacionIntentos" id="intentos"></p>
+							<p class="puntuacionIntentos" id="aciertos"></p>
+							<input type="text" name="nombre-pokemon" id="nombre-pokemon">
+							<input type="button" value="Validar respuesta" id="boton-validar">
+							<input type="button" value="Mostrar pista" id="boton-pista">
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4">
-				<div class="card">
-					<h3>DERACINE</h3>
-					<a href="projects-detail/projects-detail-Deracine.html"><img src="../img/proyectos/deracine.jpg"
-							alt="Deracine"></a>
-					<p>Genre: Adventure VR</p>
+				<div id="puntuacion" class="hidden">
+					<h3 id="puntuacion-header">Mayores Puntuaciones</h3>
+					<input type="button" value="¡Volver a jugar!" id="boton-reiniciar">
+				</div>
+
+				<!--VENTANAS MODALES-->
+				<div class="ventana-modal hidden" id="agradecimiento">
+					<div class="container-ventana">
+						<div class="container-texto-ventana">
+							<h2>GRACIAS POR JUGAR</h2>
+							<img src="https://img.icons8.com/color/96/000000/pokeball-2.png" alt="pokeball" />
+						</div>
+						<div class="boton-continuar"><button id="continuarHighscore">CONTINUAR</button></div>
+					</div>
+				</div>
+				<div class="ventana-modal hidden" id="correcto">
+					<div class="container-ventana">
+						<div class="container-texto-ventana ">
+							<p>CORRECTO</p>
+							<img src="https://img.icons8.com/color/96/000000/pokeball-2.png" alt="pokeball" />
+						</div>
+						<div class="boton-continuar"><button id="continuarCorrecto">CONTINUAR</button></div>
+					</div>
+				</div>
+				<div class="ventana-modal hidden" id="incorrecto">
+					<div class="container-ventana">
+						<div class="container-texto-ventana ">
+							<p>INCORRECTO</p>
+							<img src="https://img.icons8.com/color/96/000000/pokeball-2.png" alt="pokeball" />
+						</div>
+						<div class="boton-continuar"><button id="continuarIncorrecto">CONTINUAR</button></div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4">
-				<div class="card">
-					<h3>DARK SOULS TRILOGY BOX</h3>
-					<a href="projects-detail/projects-detail-DarkSouls.html"><img
-							src="../img/proyectos/dark-souls-triology-box.jpg" alt="Dark_Soul"></a>
-					<p>Genre: Action RPG</p>
-				</div>
-			</div>
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4">
-				<div class="card">
-					<h3>BLOODBORNE THE OLD HUNTERS HUNTERS</h3>
-					<a href="projects-detail/projects-detail-Bloodborne.html"><img
-							src="../img/proyectos/bloodborne-the-old-hunters-edition.png" alt=""></a>
-					<p>Genre: Action RPG</p>
-				</div>
-			</div>
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4">
-				<div class="card">
-					<h3>MONHAN-NIKKI POKAPOKA AIROU-MURA DX</h3>
-					<a href="projects-detail/projects-detail-Monhan-Nikki.html"><img
-							src="../img/proyectos/monster-hunter-diary-poka-poka-airou-village.jpeg" alt=""></a>
-					<p>Genre: Airou Life (Felyne Life Simulation)</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4">
-				<div class="card">
-					<h3>ARMORED CORE VERDICT DAY</h3>
-					<a href="projects-detail/projects-detail-ArmoredCore.html"><img
-							src="../img/proyectos/armored-core-verict-day.jpg" alt="Armored C ore"></a>
-					<p>Genre: Mech Customization & RTS</p>
-				</div>
-			</div>
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4">
-				<div class="card">
-					<h3>JUTEKKI</h3>
-					<a href="projects-detail/projects-detail-Jutekki.html"><img src="../img/proyectos/jutekki.jpg"
-							alt="Jutekki"></a>
-					<p>Genre: Dramatic Senjou Taiken (Action)</p>
-				</div>
-			</div>
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4">
-				<div class="card">
-					<h3>KIDO-SENSHI GUNDAM UC</h3>
-					<a href="projects-detail/projects-detail-Unicorn.html"><img
-							src="../img/proyectos/kido-senshi-gundam-uc.jpg" alt="Kido-Senshi"></a>
-					<p>Genre: Dramatic Senjou Taiken (Action)</p>
-				</div>
-			</div>
-
-		</div>
-
-
-
-		<div class="row">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4">
-				<div class="card">
-					<h3>ANOTHER CENTURY'S EPISODE PORTABLE</h3>
-					<a href="projects-detail/projects-detail-Century.html"><img
-							src="../img/proyectos/another-century-episode-portable.jpg"
-							alt="Anothr Century Protable"></a>
-					<p>Genre: Ace Robot Action (Robot Action)</p>
-				</div>
-			</div>
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4">
-				<div class="card">
-					<h3>TENCHU 4 PLUS</h3>
-					<a href="projects-detail/projects-detail-Tenchuu.html"><img src="../img/proyectos/tenchu-4-plus.jpg"
-							alt="Tenchu 4"></a>
-					<p>Honkaku Ninja Action (Ninja Action)</p>
-				</div>
-			</div>
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4">
-				<div class="card">
-					<h3>FU-UN SHINSENGUMI -BAKUMATSUDEN- PORTABLE</h3>
-					<a href="projects-detail/projects-detail-shinshengumi.html"><img
-							src="../img/proyectos/fu-un-shinsengumi-bakumatsuden-portable.jpg" alt="Fu-un"></a>
-					<p>Genre: Honkaku Rekishi Action (Action)</p>
-				</div>
-			</div>
-
-		</div>
-
-
-
 	</main>
 	<footer>
-
-		<!-- clase para que el footer ocupe toda la pantalla -->
 		<div class="row">
 			<div class="col-12 flexFooter">
 				<div class="copyFooter">
@@ -264,12 +206,13 @@
 				</div>
 			</div>
 		</div>
-
 	</footer>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 	</script>
+	<script type="module" src="../pokemon/pokeFetch.js"></script>
+	<script type="module" src="../pokemon/pokeApp.js"></script>
 </body>
 
 </html>

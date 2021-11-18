@@ -1,0 +1,340 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+main {
+    background-color: rgb(20, 25, 35);
+    background: linear-gradient(45deg, rgb(13, 17, 24) 0%, rgb(8, 23, 61) 35%, rgb(10, 13, 19) 100%);
+    height: 100vh;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+h2 {
+    font-size: 3rem !important;
+}
+
+h4 {
+    text-align: center;
+    font-weight: 100 !important;
+}
+
+input,
+input:disabled {
+    background-color: rgb(35, 40, 42);
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    caret-color: transparent;
+}
+
+input:disabled {
+    background-color: rgb(30, 35, 37);
+    color: rgb(27, 209, 124);
+    text-shadow: 1.5px 1px 1.5px rgba(27, 209, 124, 0.39);
+    box-shadow: 1px 1px rgb(0, 0, 0) inset;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+main div.col {
+    padding: 0px !important;
+    margin: 0px !important;
+    width: 50px !important;
+}
+
+main div.row {
+    margin: 0 auto !important;
+    width: 458px;
+}
+
+main div.row .border_right {
+    border-right: solid 4px grey;
+}
+
+main div.row.border_bottom {
+    border-bottom: solid 4px grey
+}
+
+main div.container {
+    margin: 0 auto !important;
+    padding: 2em;
+    width: 40%;
+}
+
+main div.score-crono {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+main div.score,
+div.crono {
+    width: max-content;
+}
+
+main div.score {
+    align-self: flex-end;
+}
+
+c main a {
+    text-decoration: none;
+    color: unset;
+}
+
+ul {
+    list-style-type: none;
+}
+
+input.nombre {
+    margin: 8px;
+    color: aliceblue;
+    background-color: rgb(35, 40, 42);
+    width: 180px;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2);
+    height: 36px;
+}
+
+select,
+option {
+    margin: 8px;
+    color: aliceblue;
+    background-color: rgb(35, 40, 42);
+    width: 180px;
+    border-radius: 1rem;
+    padding: 2px;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2);
+    height: 36px;
+}
+
+button.btn {
+    transition: transform .8s ease-in-out;
+    margin: 8px;
+    color: aliceblue;
+    background-color: rgb(35, 40, 42);
+    width: 180px;
+    border-radius: 1rem;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2);
+    height: 36px;
+}
+
+button.btn:hover {
+    background-color: rgb(30, 18, 71);
+    color: aliceblue;
+}
+
+.pantalla {
+    height: 100%;
+    min-width: 100%;
+}
+
+.pant-inicial {
+    width: 800px;
+    height: 600px;
+    transition: transform .8s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 400px);
+}
+
+.pant-sudoku {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 800px;
+    height: 600px;
+    transition: transform .8s ease-in-out;
+    font-size: 3.5vh;
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 400px);
+}
+
+.pant-score {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 800px;
+    height: 600px;
+    transition: transform .8s ease-in-out;
+    font-size: 3.5vh;
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 400px);
+}
+
+.pant-victoria {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 800px;
+    height: 600px;
+    transition: transform .8s ease-in-out;
+    font-size: 3.5vh;
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 400px);
+    display: flex;
+    flex-wrap: column;
+    padding: 0.5em;
+}
+
+.column {
+    text-align: center;
+}
+
+.carta {
+    margin: 0 auto;
+    height: fit-content;
+    background-color: rgb(30, 33, 45);
+    border: solid;
+    border-color: rgb(35, 255, 108);
+    padding: 0.5em;
+    border-radius: 0.3em;
+    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.2);
+}
+
+#verHighscore {
+    margin: 0 auto;
+    color: aliceblue;
+    background-color: rgb(35, 40, 42);
+    padding: 0em 0.8em 0.2em;
+    border-radius: 0.2em;
+    width: fit-content;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2);
+    height: fit-content;
+    font-size: 2.5vh;
+    letter-spacing: -0.05em;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+#verHighscore:hover,
+#btn-volver:hover {
+    background-color: rgb(30, 18, 71);
+    color: rgb(193, 199, 204);
+}
+
+#btn-volver {
+    margin-top: 1em;
+    color: aliceblue;
+    background-color: rgb(35, 40, 42);
+    padding: 0em 0.8em 0.2em;
+    border-radius: 0.2em;
+    width: fit-content;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2);
+    height: fit-content;
+    font-size: 2.5vh;
+    letter-spacing: -0.05em;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+.trans {
+    transform: translateX(-2000%);
+}
+
+.input-err {
+    border-color: rgb(255, 32, 69);
+    animation: bounce .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translatex(15px);
+    }
+    50% {
+        transform: translateX(-15px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.input-err2 {
+    border-color: rgb(255, 32, 69);
+    animation: bounce2 .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bounce2 {
+    0% {
+        transform: translateY(0);
+    }
+    1% {
+        transform: translateX(0);
+    }
+    24% {
+        transform: translateY(1px);
+    }
+    25% {
+        transform: translateX(-1px);
+    }
+    50% {
+        transform: translateY(-1px);
+    }
+    51% {
+        transform: translateX(1px);
+    }
+    99% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+table {
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: 100;
+    background-color: rgb(35, 40, 42);
+    padding: 1em;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 0.5em 1em;
+    width: 250px!important;
+}
+
+tr:hover {
+    background-color: rgb(30, 18, 71);
+    border: 0.5px solid rgb(35, 255, 108) !important;
+}

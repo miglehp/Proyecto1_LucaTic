@@ -1,7 +1,7 @@
 main {
   background-color: rgb(20, 25, 35);
   background: linear-gradient(45deg, rgb(13, 17, 24) 0%, rgb(8, 23, 61) 35%, rgb(10, 13, 19) 100%);
-  font-size: 2.5vh;
+  font-size: 3vh;
 }
 
 .carousel-item {
